@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
-
-const generateController = require("./controllers/generateController");
+const cors = require('cors');
+const generateController = require('./controllers/generateController');
 
 const port = process.env.PORT || 3000;
+
+app.use(cors());
 
 app.use('/generate', generateController);
 

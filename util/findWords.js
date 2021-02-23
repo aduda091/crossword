@@ -9,8 +9,8 @@ module.exports = targetWord => {
 
     const foundWords = [];
 
-    // start from begginning of shuffled words and try to find if they contain the letters, if so - add them to a special
-    // array - one of objects which have word and index pairs
+    // start from begginning of shuffled words and try to find if they contain the letters, if so - add them to an
+    // array of objects which have word and index pairs (and more)
 
     for (let i = 0; i < targetLength; i++) {
         const letterToFind = targetWord[i];
@@ -32,10 +32,10 @@ module.exports = targetWord => {
             if (word.includes(letterToFind)) {
                 const foundIndex = word.indexOf(letterToFind);
                 const result = {
+                    letter: letterToFind,
                     word,
                     originalIndex: i,
                     indexInWord: foundIndex,
-                    letter: letterToFind
                 };
 
                 foundWords.push(result);
